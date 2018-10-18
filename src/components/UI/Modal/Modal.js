@@ -1,6 +1,6 @@
 import React from 'react';
 import Aux from '../../../hoc/Aux';
-import Backdrop from '../Backdrop/Brackdrop';
+import Backdrop from '../Backdrop/Backdrop';
 import classes from './Modal.module.css';
 
 const modal = (props) => (
