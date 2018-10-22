@@ -107,38 +107,6 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         // alert('Order placed!')
-        // this.setState({
-        //     loading: true
-        // });
-
-        // const order = {
-        //     ingredients: this.state.ingredients,
-        //     price: this.state.totalPrice,
-        //     customer: {
-        //         name: 'Pepito Perez',
-        //         address: {
-        //             street: 'Calle 151 Bogota',
-        //             zipCode: '11100',
-        //             country: 'Colombia'
-        //         },
-        //         email: 'test@test.com'
-        //     },
-        //     deliveryMethod: 'fastest'
-        // }
-
-        // axios.post('/orders.json', order)
-        //     .then(response => {
-        //         this.setState({
-        //             loading: false,
-        //             purchasing: false
-        //         })
-        //     })
-        //     .catch(err => {
-        //         this.setState({
-        //             loading: false,
-        //             purchasing: false
-        //         })
-        //     });
 
         const queryParams = [];
 
@@ -146,6 +114,7 @@ class BurgerBuilder extends Component {
             queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
 
+        queryParams.push('price=' + this.state.totalPrice)
         const queryString = queryParams.join('&')
 
         this.props.history.push({
